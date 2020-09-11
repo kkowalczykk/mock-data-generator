@@ -1,0 +1,25 @@
+<form #form="ngForm">
+      <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                  <span class="input-group-text" id="">Attribute name</span>
+            </div>
+            <input name="name" class="form-control" [(ngModel)]="name" required>
+      </div>
+      <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                  <span class="input-group-text" id="">Choose type</span>
+            </div>
+            <select class="custom-select" id="selectedType" name="type" [(ngModel)]="selectedType" required>
+                  <option *ngFor="let type of types; index as id" [value]="type">{{type}}</option>
+            </select>
+      </div>
+      <div *ngIf="selectedType ==='Custom Table'" class="input-group mb-2">
+            <div class="input-group-prepend">
+                  <span class="input-group-text" id="values">Add custom values</span>
+            </div>
+            <input type="text" class="form-control" required name="custom" [(ngModel)]="custom">
+            <label>values separated with comma (e.g. "true, false")</label>
+      </div>
+      <button class="btn-primary btn btn-block" [disabled]="form.invalid" (click)="addAttribute(form)">Add
+            attribute</button>
+</form>

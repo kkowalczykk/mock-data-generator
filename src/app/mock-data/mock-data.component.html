@@ -1,0 +1,8 @@
+<div class="container json-box formm-control">
+
+      <!-- <pre *ngIf="generator.generatedData.length !== 0">{{generator.generatedData | json}}</pre> -->
+      <textarea *ngIf="generator.generatedData.length !== 0" class="form-control-plaintext"
+            id="exampleFormControlTextarea4" rows="25" readonly>{{generator.generatedData | json}}</textarea>
+      <button *ngIf="generator.generatedData.length !== 0" class="btn-secondary btn-sm mt-2"
+            (click)="downloadJson(generator.generatedData)">Download JSON</button>
+</div>

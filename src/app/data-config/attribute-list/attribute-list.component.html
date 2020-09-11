@@ -1,0 +1,33 @@
+<div class="input-group mb-5 mt-5">
+      <div class="input-group-prepend">
+            <span class="input-group-text ">Number of records</span>
+      </div>
+      <input type="number" name="recordNumber" id="recNmb" [(ngModel)]="generator.recordNumber"
+            [value]="generator.recordNumber" class="form-control">
+
+      <button type="button" class="btn btn-success" (click)="generator.generateData()">Generate Mock
+            Data</button>
+</div>
+
+
+<div class="container">
+      <table class="table">
+            <thead>
+                  <tr>
+                        <th class="th-lg">Attribute name</th>
+                        <th class="th-lg">Attribute type</th>
+                        <th class="th-lg">Custom table?</th>
+                        <th class="th-lg"></th>
+                  </tr>
+            </thead>
+            <tbody>
+                  <tr *ngFor="let atr of generator.attributeList; index as id;">
+                        <td>{{atr.name}}</td>
+                        <td>{{atr.type}}</td>
+                        <td>{{atr.custom}}</td>
+                        <td><button class="btn btn-sm btn-danger" (click)="deleteAttribute(id)">Delete</button></td>
+                  </tr>
+            </tbody>
+
+      </table>
+</div>
