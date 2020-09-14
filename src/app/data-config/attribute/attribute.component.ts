@@ -9,10 +9,14 @@ import { GeneratorService } from '../../generator.service';
 })
 export class AttributeComponent implements OnInit {
 
-  types = ['uuID', 'First Name', 'Last Name', 'Mail', 'City Address', 'Street Address', 'Non-integer number', 'Phone number', 'Custom Table'];
+  types = ['uuID', 'First Name', 'Last Name', 'Mail', 'City Address', 'Street Address', 'Number', 'Phone number', 'Date', 'Time', 'Custom Table'];
   selectedType: string;
   name: string;
   custom: string;
+  minDate: string;
+  maxDate: string;
+  minTime: string;
+  maxTime: string;
 
   constructor(public generator: GeneratorService) { }
 

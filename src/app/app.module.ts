@@ -7,6 +7,7 @@ import { DataConfigComponent } from './data-config/data-config.component';
 import { AttributeListComponent } from './data-config/attribute-list/attribute-list.component';
 import { AttributeComponent } from './data-config/attribute/attribute.component';
 import { MockDataComponent } from './mock-data/mock-data.component';
+import { DictionaryComponent } from './dictionary/dictionary.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { MockDataComponent } from './mock-data/mock-data.component';
     DataConfigComponent,
     AttributeListComponent,
     AttributeComponent,
-    MockDataComponent
+    MockDataComponent,
+    DictionaryComponent
   ],
   imports: [
     BrowserModule,

@@ -16,7 +16,7 @@
                   <tr>
                         <th class="th-lg">Attribute name</th>
                         <th class="th-lg">Attribute type</th>
-                        <th class="th-lg">Custom table?</th>
+                        <th class="th-lg">Custom options</th>
                         <th class="th-lg"></th>
                   </tr>
             </thead>
@@ -24,10 +24,17 @@
                   <tr *ngFor="let atr of generator.attributeList; index as id;">
                         <td>{{atr.name}}</td>
                         <td>{{atr.type}}</td>
-                        <td>{{atr.custom}}</td>
+                        <td *ngIf="atr.custom">Values: {{atr.custom}}</td>
+                        <td *ngIf="atr.minDate">min: {{atr.minDate}} <br> max: {{atr.maxDate}}</td>
+                        <td *ngIf="atr.minTime">min: {{atr.minTime}} <br> max: {{atr.maxTime}}</td>
+                        <td *ngIf="atr.minNumber">min: {{atr.minNumber}} <br> max: {{atr.maxNumber}} <br> decimal
+                              places: {{atr.decimalPlaces}}</td>
+                        <td *ngIf="!atr.custom && !atr.minDate && !atr.minTime && !atr.minNumber"></td>
                         <td><button class="btn btn-sm btn-danger" (click)="deleteAttribute(id)">Delete</button></td>
                   </tr>
             </tbody>
 
       </table>
 </div>
+
+<!-- <div class="btn btn-danger" (click)="generator.generateDate()">TEST</div> -->

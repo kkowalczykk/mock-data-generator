@@ -20,6 +20,43 @@
             <input type="text" class="form-control" required name="custom" [(ngModel)]="custom">
             <label>values separated with comma (e.g. "true, false")</label>
       </div>
+      <div *ngIf="selectedType ==='Number'" class="input-group mb-2">
+            <div class="input-group-prepend">
+                  <span class="input-group-text" id="min">Min</span>
+            </div>
+            <input type="number" class="form-control" required name="minNumber" [(ngModel)]="minNumber">
+            <div class="input-group-prepend">
+                  <span class="input-group-text" id="max">Max</span>
+            </div>
+            <input type="number" class="form-control" required name="maxNumber" [(ngModel)]="maxNumber">
+            <div class="input-group-prepend">
+                  <span class="input-group-text" id="max">Decimal places</span>
+            </div>
+            <input type="number" class="form-control" required name="decimalPlaces" [(ngModel)]="decimalPlaces">
+
+      </div>
+      <div *ngIf="selectedType ==='Date'" class="input-group mb-2">
+            <div class="input-group-prepend">
+                  <span class="input-group-text" id="min">Min</span>
+            </div>
+            <input type="date" class="form-control" required name="minDate" [(ngModel)]="minDate">
+            <div class="input-group-prepend">
+                  <span class="input-group-text" id="max">Max</span>
+            </div>
+            <input type="date" class="form-control" required name="maxDate" [(ngModel)]="maxDate">
+
+      </div>
+      <div *ngIf="selectedType ==='Time'" class="input-group mb-2">
+            <div class="input-group-prepend">
+                  <span class="input-group-text" id="min">Min</span>
+            </div>
+            <input type="time" class="form-control" required name="minTime" [(ngModel)]="minTime">
+            <div class="input-group-prepend">
+                  <span class="input-group-text" id="max">Max</span>
+            </div>
+            <input type="time" class="form-control" required name="maxTime" [(ngModel)]="maxTime">
+
+      </div>
       <button class="btn-primary btn btn-block" [disabled]="form.invalid" (click)="addAttribute(form)">Add
             attribute</button>
 </form>
